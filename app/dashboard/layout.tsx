@@ -25,11 +25,9 @@ export default function DashboardLayout({
 }) {
     const { isSignedIn, setIsSignedIn } = useAuth()
 
-    useLayoutEffect(() => {
-        if (!isSignedIn) {
-            redirect('/signIn')
-        }
-    }, [isSignedIn])
+    if (!isSignedIn) {
+        redirect('/signIn')
+    }
 
     return (
         <>
