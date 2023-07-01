@@ -1,10 +1,9 @@
 'use client'
 
-import { useContext } from 'react'
-import { AuthContext } from './layout'
+import { useAuth } from './AuthProvider'
 
 export default function Home() {
-    const { isSignedIn, setIsSignedIn } = useContext(AuthContext)
+    const { isSignedIn, setIsSignedIn } = useAuth()
     return (
         <main>
             isSignedIn: {isSignedIn ? 'true' : 'false'}
