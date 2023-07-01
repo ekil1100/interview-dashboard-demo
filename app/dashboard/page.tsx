@@ -118,7 +118,7 @@ export default function Agents() {
                                     {agent.name}
                                 </TableCell>
                                 <TableCell>{agent.status}</TableCell>
-                                <TableCell className='text-right'>
+                                <TableCell className='space-x-2 text-right'>
                                     <Dialog>
                                         <DialogTrigger asChild>
                                             <Button variant='outline' size='sm'>
@@ -192,6 +192,19 @@ export default function Agents() {
                                             </DialogFooter>
                                         </DialogContent>
                                     </Dialog>
+                                    <Button
+                                        variant='destructive'
+                                        size='sm'
+                                        onClick={() => {
+                                            setAgents(
+                                                agents.filter(
+                                                    (a) => a.id !== agent.id,
+                                                ),
+                                            )
+                                        }}
+                                    >
+                                        Delete
+                                    </Button>
                                 </TableCell>
                             </TableRow>
                         ))}
