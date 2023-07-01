@@ -15,13 +15,12 @@ function SignIn() {
     return (
         <main className='grid h-screen place-content-center gap-4'>
             <Avatar className='h-28 w-28'>
-                <AvatarImage src='https://github.com/shadcn.png' />
+                <AvatarImage src='../favicon.ico' />
                 <AvatarFallback>Like</AvatarFallback>
             </Avatar>
             <Button
                 onClick={() => {
                     setIsSignedIn(true)
-                    redirect('/dashboard')
                 }}
             >
                 Sign In

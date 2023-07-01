@@ -2,13 +2,16 @@
 
 import { redirect } from 'next/navigation'
 import { useAuth } from './AuthProvider'
+import { useLayoutEffect } from 'react'
 
 export default function Home() {
     const { isSignedIn } = useAuth()
 
-    if (isSignedIn) {
-        redirect('/dashboard')
-    } else {
-        redirect('/signIn')
-    }
+    useLayoutEffect(() => {
+        if (isSignedIn) {
+            redirect('/dashboard')
+        } else {
+            redirect('/signIn')
+        }
+    }, [])
 }

@@ -5,6 +5,7 @@ import { useAuth } from '../AuthProvider'
 import { redirect } from 'next/navigation'
 import { LogOut } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useEffect, useLayoutEffect } from 'react'
 
 const sidebarNavItems = [
     {
@@ -24,9 +25,11 @@ export default function DashboardLayout({
 }) {
     const { isSignedIn, setIsSignedIn } = useAuth()
 
-    if (!isSignedIn) {
-        redirect('/signIn')
-    }
+    useLayoutEffect(() => {
+        if (!isSignedIn) {
+            redirect('/signIn')
+        }
+    }, [isSignedIn])
 
     return (
         <>
