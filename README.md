@@ -1,6 +1,6 @@
 # Dashboard Demo
 
-You can see the demo on https://inter-demo.ekil.io
+You can see the demo on https://interview-dashboard-demo.vercel.app/
 
 Using NextJS, TailwindCSS, and ShadCN UI components.
 
